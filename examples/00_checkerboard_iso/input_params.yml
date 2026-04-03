@@ -19,9 +19,15 @@ output:
   log_level: 2 # 1 debug mode, 2: info mode, 3: warning mode, 4: error mode
 
 domain:
-  depth: [0, 10] # depth range in km
-  interval: [0.02, 0.02, 0.5] # interval of lon(degree), lat(degree), z(km)
-  num_grid_margin: 5 # number of grid margin
+  depth_min_max: [0, 15] # depth range in km
+  grid_method: 0 # 0: grid by interval; 1: grid by min max and number of grid
+  grid_method_0:
+    interval: [0.02, 0.02, 0.5] # interval of lon(degree), lat(degree), z(km)
+    num_grid_margin: 5 # number of grid margin
+  grid_method_1:
+    lon_min_max: [119.5, 120.5]
+    lat_min_max: [29.5, 30.5]
+    n_grid: [100, 100, 30] # number of grid in lon, lat, z
 
 topo:
   is_consider_topo: False # whether consider topography

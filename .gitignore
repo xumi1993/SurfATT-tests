@@ -16,3 +16,4 @@ __pycache__/
 
 testcase*/*.yml
 testcase*/src_rec_file*
+testcase*/*.h5

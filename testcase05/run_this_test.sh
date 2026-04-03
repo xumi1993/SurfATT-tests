@@ -1,0 +1,18 @@
+#!/bin/bash
+
+SRUFATT_HOME=/Users/xumijian/Codes/SurfATTPP/bin
+
+cp ../examples/01_checkerboard_ani/input_params_fwd.yml ./
+cp ../examples/01_checkerboard_ani/src_rec_file_25.csv ./src_rec_file.csv
+cp ../examples/01_checkerboard_ani/target_model.h5 ./
+
+
+# upadate parameters with PyTomoATT
+input_params=input_params_fwd.yml
+target_model=target_model.h5
+pta setpar $input_params data.vel_type "[True, False]"
+pta setpar $input_params inversion.init_model_type 2
+pta setpar $input_params inversion.init_model_type is_anisotropic False
+pta setpar $input_params inversion.init_model_path $target_model
+
+mpirun -np 8 $SRUFATT_HOME/SURFATT_tomo -i $input_params -f
