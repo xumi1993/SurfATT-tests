@@ -1,0 +1,18 @@
+# Output files
+OUTPUT_FILES/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+
+testcase*/*.yml
+testcase*/src_rec_file*
