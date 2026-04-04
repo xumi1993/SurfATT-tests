@@ -2,6 +2,8 @@
 
 SRUFATT_HOME=/Users/xumijian/Codes/SurfATTPP/bin
 
+NPROC=8
+
 cp ../examples/01_checkerboard_ani/input_params_fwd.yml ./
 cp ../examples/01_checkerboard_ani/src_rec_file_25.csv ./src_rec_file.csv
 cp ../examples/01_checkerboard_ani/target_model.h5 ./
@@ -15,4 +17,4 @@ pta setpar $input_params inversion.init_model_type 2
 pta setpar $input_params inversion.is_anisotropy True
 pta setpar $input_params inversion.init_model_path $target_model
 
-mpirun -np 8 $SRUFATT_HOME/SURFATT_tomo -i $input_params -f
+mpirun -np $NPROC $SRUFATT_HOME/SURFATT_tomo -i $input_params -f
