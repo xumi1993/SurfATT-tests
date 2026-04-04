@@ -48,7 +48,7 @@ postproc:
 
 inversion:
   # ------- Inversion parameters --------
-  is_anisotropic: False
+  is_anisotropy: False
   use_alpha_beta_rho: false
   rho_scaling: false
   # ------- Initial model --------
