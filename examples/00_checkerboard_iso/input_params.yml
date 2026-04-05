@@ -64,4 +64,6 @@ inversion:
   step_length: 0.02 # starting step length
   maxshrink: 0.6 # max step length descent
   # ------- Line search for LBFGS -------
+  c1: 0.1
+  c2: 0.9
   max_sub_niter: 10 # max sub iterations for line search
