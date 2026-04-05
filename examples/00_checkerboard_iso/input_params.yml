@@ -16,6 +16,7 @@ output:
   output_path: OUTPUT_FILES/ # path to save output files
   output_initial_model: True # whether output initial model
   output_in_process_data: True
+  output_in_process_model: True
   log_level: 2 # 1 debug mode, 2: info mode, 3: warning mode, 4: error mode
 
 domain:
@@ -37,7 +38,7 @@ topo:
 postproc:
   kdensity_coe: 0  # Kdensity_coe is used to rescale the final kernel:  kernel -> kernel / pow(density of kernel, Kdensity_coe).
   independent_smooth_ani: False
-  smooth_method: 0
+  smooth_method: 1
   smooth_method_0:
     sigma: [0.1, 5]
     sigma_ani: [0.1, 5]
@@ -59,7 +60,7 @@ inversion:
   niter: 40 # max iterations
   min_derr: 0.0015 # minimum error change
   # ------- optimization parameters -------
-  optim_method: 2 # 0: SD (adeptive step length); 1: CG (line search); 2: LBFGS (line search)
+  optim_method: 1 # 0: SD (adeptive step length); 1: LBFGS (line search)
   step_length: 0.02 # starting step length
   maxshrink: 0.6 # max step length descent
   # ------- Line search for LBFGS -------
