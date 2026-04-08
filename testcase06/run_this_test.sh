@@ -5,7 +5,7 @@ SRUFATT_HOME=/Users/xumijian/Codes/SurfATTPP/bin
 NPROC=8
 
 cp ../examples/01_checkerboard_ani/input_params_fwd.yml ./
-cp ../examples/01_checkerboard_ani/src_rec_file_25.csv ./src_rec_file.csv
+cp ../examples/01_checkerboard_ani/src_rec_file_25.csv ./src_rec_test_data_PH.csv
 cp ../examples/01_checkerboard_ani/target_model.h5 ./
 
 
