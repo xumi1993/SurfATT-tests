@@ -3,11 +3,8 @@
 # data parameters
 #######################################
 data:
-  src_rec_file_ph: src_rec_file.csv
+  src_rec_file_ph: src_rec_test_data_PH.csv
   src_rec_file_gr: src_rec_file_gr.csv
-  # src_rec_file_ph: OUTPUT_FILES/src_rec_file_forward_ph.csv
-  # src_rec_file_gr: OUTPUT_FILES/src_rec_file_forward_gr.csv
-  # src_rec_file: /home/xumijian/Codes/SurfATT/test/00_checkerboard_iso/src_rec_test_all.csv
   iwave: 2 # 1 Love wave, 2 Rayleigh wave
   vel_type: [True, False] # use phase velocity, group velocity or both
   weights: [0.5, 0.5] # weights for phase and group velocity
@@ -16,11 +13,12 @@ output:
   output_path: OUTPUT_FILES/ # path to save output files
   output_initial_model: True # whether output initial model
   output_in_process_data: True
+  output_in_process_model: True
   log_level: 2 # 1 debug mode, 2: info mode, 3: warning mode, 4: error mode
 
 domain:
   depth_min_max: [0, 15] # depth range in km
-  grid_method: 1 # 0: grid by interval; 1: grid by min max and number of grid
+  grid_method: 0 # 0: grid by interval; 1: grid by min max and number of grid
   grid_method_0:
     interval: [0.025, 0.025, 0.5] # interval of lon(degree), lat(degree), z(km)
     num_grid_margin: 5 # number of grid margin
@@ -48,7 +46,7 @@ postproc:
 
 inversion:
   # ------- Inversion parameters --------
-  is_anisotropy: False
+  is_anisotropy: True
   use_alpha_beta_rho: false
   rho_scaling: false
   # ------- Initial model --------
@@ -59,7 +57,7 @@ inversion:
   niter: 40 # max iterations
   min_derr: 0.0015 # minimum error change
   # ------- optimization parameters -------
-  optim_method: 2 # 0: SD (adeptive step length); 1: CG (line search); 2: LBFGS (line search)
+  optim_method: 1 # 0: SD (adeptive step length); 2: LBFGS (line search)
   step_length: 0.02 # starting step length
   maxshrink: 0.6 # max step length descent
   # ------- Line search for LBFGS -------
