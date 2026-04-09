@@ -27,6 +27,12 @@ domain:
     lat_min_max: [24.05, 25.95]
     n_grid: [96, 96, 31] # number of grid in lon, lat, z
 
+model:
+  # ------- Initial model --------
+  init_model_type: 0 # 0: increase from v0 to v1; 1: 1D inversion for average tt; 2: use a 3D vs model
+  vel_range: [1.8, 4.2]
+  init_model_path: /path/to/init_mod.h5 # Path to initial model. Only valid in init_model_type: 2
+
 topo:
   is_consider_topo: False # whether consider topography
   topo_file: /path/to/topo.grd # Path to local elevation file. Only valid in topo_type: 1 and 2
@@ -49,10 +55,6 @@ inversion:
   is_anisotropy: True
   use_alpha_beta_rho: false
   rho_scaling: false
-  # ------- Initial model --------
-  init_model_type: 0 # 0: increase from v0 to v1; 1: 1D inversion for average tt; 2: use a 3D vs model
-  vel_range: [1.8, 4.2]
-  init_model_path: /path/to/init_mod.h5 # Path to initial model. Only valid in init_model_type: 2
   # ------- Inversion parameters --------
   niter: 60 # max iterations
   min_derr: 0.0015 # minimum error change
