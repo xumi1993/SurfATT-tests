@@ -12,6 +12,7 @@ input_params=input_params.yml
 cp ../examples/04_hawaii_topo/$input_params ./
 cp ../examples/04_hawaii_topo/src_rec_file_raw.csv ./
 cp ../examples/04_hawaii_topo/hawaii.nc ./
+pta setpar $input_params inversion.niter $MAXIT
 
 # download topography
 # gmt grdcut @earth_relief_01m -R-157/-152/18/21 -Ghawaii.nc
