@@ -54,11 +54,11 @@ inversion:
   vel_range: [1.8, 4.2]
   init_model_path: /path/to/init_mod.h5 # Path to initial model. Only valid in init_model_type: 2
   # ------- Inversion parameters --------
-  niter: 40 # max iterations
+  niter: 60 # max iterations
   min_derr: 0.0015 # minimum error change
   # ------- optimization parameters -------
-  optim_method: 1 # 0: SD (adeptive step length); 2: LBFGS (line search)
-  step_length: 0.02 # starting step length
+  optim_method: 1 # 0: SD (adaptive step length); 1: LBFGS (line search)
+  step_length: 0.01 # starting step length
   maxshrink: 0.6 # max step length descent
   # ------- Line search for LBFGS -------
   max_sub_niter: 10 # max sub iterations for line search
