@@ -1,6 +1,6 @@
 # SurfATT-tests Testcase Summary
 
-This repository contains 15 test scenarios (`testcase01` to `testcase15`) that cover SurfATT core workflows across different data types, model setups, optimization/smoothing strategies, anisotropy, and topography-enabled cases.
+This repository contains 16 test scenarios (`testcase01` to `testcase16`) that cover SurfATT core workflows across different data types, model setups, optimization/smoothing strategies, anisotropy, and topography-enabled cases.
 
 ## Testcase Overview
 
@@ -21,6 +21,7 @@ This repository contains 15 test scenarios (`testcase01` to `testcase15`) that c
 | `testcase13` | `SURFATT_cb_fwd` + `SURFATT_tomo` | End-to-end loop test: synthesize data first, then invert | Step 1 generates `OUTPUT_FILES/src_rec_file_forward_PH.csv`; step 2 inverts it with `init_model_type=1`, `optim_method=1` |
 | `testcase14` | `SURFATT_rotate_*` + `SURFATT_tomo` | Realistic workflow with topography and coordinate rotation (Hawaii) | Rotate station/event geometry + topo, invert with `topo.is_consider_topo=True`, then rotate model results back |
 | `testcase15` | `SURFATT_cb_fwd` + `SURFATT_tomo` | Anisotropic end-to-end loop with larger input dataset | Use `src_rec_file_100.csv`, synthesize `3/3/2` checkerboard with anisotropy (`-a 2/2/2`), then invert |
+| `testcase16` | `SURFATT_tomo -f` | Forward run using a regional 3D initial model (`csem.h5`) on a WUS-scale domain | `init_model_type=2`, `init_model_path=csem.h5`, `vel_type=[True,False]`, `grid_method=1`, domain `lon[-125.5,-103.5]`, `lat[29,49.5]`, `depth[0,80]` |
 
 ## Coverage Dimensions
 
