@@ -1,5 +1,5 @@
 # Output files
-OUTPUT_FILES/
+OUTPUT_FILES*/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
@@ -17,3 +17,10 @@ __pycache__/
 testcase*/*.yml
 testcase*/src_rec_file*
 testcase*/*.h5
+testcase14/hawaii.nc
+gmt*
+.gmt*
+hawaii_rotated.nc
+src_rec_file_rotated.csv
+check*
+fort*

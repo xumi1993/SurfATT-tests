@@ -11,4 +11,4 @@ cp ../examples/00_checkerboard_iso/src_rec_file_ph.csv ./
 
 pta setpar $input_params inversion.is_anisotropy True
 
-mpirun -np $NPROC $SRUFATT_HOME/SURFATT_cb_fwd -i $input_params -n 2/3/3 -a 2/3/1 -m 0.2 -p 0.08/0.04 -s 3
+mpirun -np $NPROC $SRUFATT_HOME/SURFATT_cb_fwd -i $input_params -n 2/3/2 -a 2/3/2 -m 0.2 -p 0.08/0.04 -s 5
