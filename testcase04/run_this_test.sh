@@ -9,6 +9,6 @@ cp ../examples/00_checkerboard_iso/src_rec_file_*.csv ./
 
 # upadate parameters with PyTomoATT
 pta setpar input_params.yml data.vel_type "[True, True]"
-pta setpar input_params.yml inversion.init_model_type 1
+pta setpar input_params.yml model.init_model_type 1
 
 mpirun -np $NPROC $SRUFATT_HOME/SURFATT_tomo -i input_params.yml -f
