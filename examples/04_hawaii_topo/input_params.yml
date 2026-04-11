@@ -6,13 +6,6 @@ data:
   vel_type: [True, False] # use phase velocity, group velocity or both
   weights: [0.5, 0.5] # weights for phase and group velocity
 
-output:
-  output_path: OUTPUT_FILES/ # path to save output files
-  output_initial_model: True # whether output initial model
-  output_in_process_data: True
-  output_in_process_model: True
-  log_level: 2 # 1 debug mode, 2: info mode, 3: warning mode, 4: error mode
-
 domain:
   depth_min_max: [0, 15] # depth range in km
   grid_method: 0 # 0: grid by interval; 1: grid by min max and number of grid
@@ -35,6 +28,13 @@ topo:
   topo_file: hawaii_rotated.nc # Path to local elevation file. Only valid in topo_type: 1 and 2
   wavelen_factor: 2.5
 
+output:
+  output_path: OUTPUT_FILES/ # path to save output files
+  output_initial_model: True # whether output initial model
+  output_in_process_data: True
+  output_in_process_model: True
+  log_level: 2 # 1 debug mode, 2: info mode, 3: warning mode, 4: error mode
+
 postproc:
   kdensity_coe: 0  # Kdensity_coe is used to rescale the final kernel:  kernel -> kernel / pow(density of kernel, Kdensity_coe).
   independent_smooth_ani: False
@@ -52,6 +52,7 @@ inversion:
   is_anisotropy: False
   use_alpha_beta_rho: false
   rho_scaling: false
+  vpvs_ratio_range: [1.4, 2.5]
   # ------- Inversion parameters --------
   niter: 40 # max iterations
   min_derr: 0.0001 # minimum error change

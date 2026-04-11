@@ -58,6 +58,7 @@ inversion:
   is_anisotropy: False
   use_alpha_beta_rho: false
   rho_scaling: false
+  vpvs_ratio_range: [1.4, 2.5]
   # ------- Inversion parameters --------
   niter: 40 # max iterations
   min_derr: 0.0015 # minimum error change
