@@ -18,6 +18,8 @@ testcase*/*.yml
 testcase*/src_rec_file*
 testcase*/*.h5
 testcase14/hawaii.nc
+testcase17/csem.nc
+
 gmt*
 .gmt*
 hawaii_rotated.nc

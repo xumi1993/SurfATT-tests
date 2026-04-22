@@ -13,7 +13,7 @@ data:
   weights: [0.5, 0.5] # weights for phase and group velocity
 
 output:
-  output_path: OUTPUT_FILES/ # path to save output files
+  output_path: OUTPUT_FILES_ph_aniso/ # path to save output files
   output_initial_model: True # whether output initial model
   output_in_process_data: True
   output_in_process_model: True
@@ -21,7 +21,7 @@ output:
 
 domain:
   depth_min_max: [0, 80] # depth range in km
-  grid_method: 1 # 0: grid by interval; 1: grid by min max and number of grid
+  grid_method: 0 # 0: grid by interval; 1: grid by min max and number of grid
   grid_method_0:
     interval: [0.1, 0.1, 2] # interval of lon(degree), lat(degree), z(km)
     num_grid_margin: 5 # number of grid margin
@@ -32,8 +32,8 @@ domain:
 
 model:
   # ------- Initial model --------
-  init_model_type: 2 # 0: increase from v0 to v1; 1: 1D inversion for average tt; 2: use a 3D vs model
-  vel_range: [1.8, 4.2]
+  init_model_type: 1 # 0: increase from v0 to v1; 1: 1D inversion for average tt; 2: use a 3D vs model
+  vel_range: [3.2, 4.8]
   init_model_path: csem.h5 # Path to initial model. Only valid in init_model_type: 2
 
 topo:
@@ -44,23 +44,23 @@ topo:
 postproc:
   kdensity_coe: 0  # Kdensity_coe is used to rescale the final kernel:  kernel -> kernel / pow(density of kernel, Kdensity_coe).
   independent_smooth_ani: False
-  smooth_method: 1
+  smooth_method: 0 # 0: Gaussian smoothing; 1: multi-grid smoothing
   smooth_method_0:
-    sigma: [0.1, 2]
-    sigma_ani: [0.1, 2]
+    sigma: [0.6, 12]
+    sigma_ani: [0.6, 12]
   smooth_method_1:
     n_inv_components: 5
-    n_inv_grid: [8, 9, 8]
+    n_inv_grid: [20, 25, 20]
     n_inv_grid_ani: [8, 9, 8]
 
 inversion:
   # ------- Inversion parameters --------
-  is_anisotropy: False
+  is_anisotropy: True
   use_alpha_beta_rho: false
   rho_scaling: false
   # ------- Inversion parameters --------
-  niter: 40 # max iterations
-  min_derr: 0.0015 # minimum error change
+  niter: 100 # max iterations
+  min_derr: 0.0005 # minimum error change
   # ------- optimization parameters -------
   optim_method: 1 # 0: SD (adeptive step length); 1: LBFGS (line search)
   step_length: 0.02 # starting step length
