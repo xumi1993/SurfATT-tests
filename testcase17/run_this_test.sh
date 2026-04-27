@@ -4,7 +4,7 @@ NPROC=8
 MAXIT=40
 
 SRUFATT_HOME=/Users/xumijian/Codes/SurfATTPP/bin
-input_params=input_params.yaml
+input_params=input_params.yml
 base_dir=../examples/05_westUS_ani
 
 cp $base_dir/$input_params ./
