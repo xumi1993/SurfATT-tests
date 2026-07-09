@@ -15,6 +15,6 @@ target_model=target_model.h5
 pta setpar $input_params data.vel_type "[True, False]"
 pta setpar $input_params model.init_model_type 2
 pta setpar $input_params model.init_model_path $target_model
-pta setpar $input_params inversion.is_anisotropy True
+pta setpar $input_params inversion.model_para_type 1
 
 mpirun -np $NPROC $SRUFATT_HOME/SURFATT_tomo -i $input_params -f

@@ -13,7 +13,7 @@ cp $base_dir/csem.nc ./
 
 python build_h5_model.py
 
-pta setpar $input_params data.src_rec_file_ph src_rec_file_ph.csv
+pta setpar $input_params data.src_rec_file_rl_ph src_rec_file_ph.csv
 pta setpar $input_params domain.grid_method 1
 pta setpar $input_params inversion.niter 3
 

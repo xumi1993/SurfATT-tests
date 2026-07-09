@@ -11,15 +11,15 @@ cp ../examples/00_checkerboard_iso/$input_params ./
 cp ../examples/00_checkerboard_iso/src_rec_file_ph.csv ./
 
 # upadate parameters with PyTomoATT
-# pta setpar $input_params data.src_rec_file_ph src_rec_test_data_PH.csv
-pta setpar $input_params data.src_rec_file_ph src_rec_file_ph.csv
+# pta setpar $input_params data.src_rec_file_rl_ph src_rec_test_data_PH.csv
+pta setpar $input_params data.src_rec_file_rl_ph src_rec_file_ph.csv
 pta setpar $input_params data.vel_type "[True, False]"
 mpirun -np $NPROC $SRUFATT_HOME/SURFATT_cb_fwd -i $input_params -n 2/3/2 -m 0.2 -p 0.08
 
-pta setpar $input_params data.src_rec_file_ph OUTPUT_FILES/src_rec_file_forward_PH.csv
+pta setpar $input_params data.src_rec_file_rl_ph OUTPUT_FILES/src_rec_file_forward_RL_PH.csv
 pta setpar $input_params model.init_model_type 1
 pta setpar $input_params postproc.smooth_method 0
-pta setpar $input_params inversion.is_anisotropy False
+pta setpar $input_params inversion.model_para_type 0
 pta setpar $input_params inversion.use_alpha_beta_rho True
 pta setpar $input_params inversion.optim_method 1
 pta setpar $input_params inversion.niter $MAXIT
