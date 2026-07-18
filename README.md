@@ -1,6 +1,6 @@
 # SurfATT-tests Testcase Summary
 
-This repository contains 16 test scenarios (`testcase01` to `testcase16`) that cover SurfATT core workflows across different data types, model setups, optimization/smoothing strategies, anisotropy, and topography-enabled cases.
+This repository contains 18 test scenarios (`testcase01` to `testcase18`) that cover SurfATT core workflows across different data types, model setups, optimization/smoothing strategies, anisotropy, and topography-enabled cases.
 
 ## Testcase Overview
 
@@ -23,11 +23,12 @@ This repository contains 16 test scenarios (`testcase01` to `testcase16`) that c
 | `testcase15` | `SURFATT_rotate_*` + `SURFATT_tomo` | Realistic workflow with topography and coordinate rotation (Hawaii) | Rotate station/event geometry + topo, invert with `topo.is_consider_topo=True`, then rotate model results back |
 | `testcase16` | `SURFATT_cb_fwd` + `SURFATT_tomo` | Anisotropic end-to-end loop with larger input dataset | Use `src_rec_file_100.csv`, synthesize `3/3/2` checkerboard with anisotropy (`-a 2/2/2`), then invert |
 | `testcase17` | `SURFATT_tomo -f` | Forward run using a regional 3D initial model (`csem.h5`) on a West US-scale domain | `init_model_type=2`, `init_model_path=csem.h5`, `vel_type=[True,False]`, `grid_method=1`, domain `lon[-125.5,-103.5]`, `lat[29,49.5]`, `depth[0,80]` |
+| `testcase18` | `SURFATT_cb_fwd` + `SURFATT_tomo` | Radial anisotropy end-to-end loop: synthesize Rayleigh + Love data from a Vs/zeta checkerboard, then invert | `model_para_type=2`, `wave_type=[True,True]`, `-n 2/3/2 -r -p 0.08/0.1` |
 
 ## Coverage Dimensions
 
 - Data-type coverage: phase only, group only, and joint phase/group.
-- Physics coverage: isotropic and anisotropic modes.
+- Physics coverage: isotropic, azimuthal-anisotropy, and radial-anisotropy modes.
 - Initial-model coverage: `init_model_type=0/1/2`.
 - Algorithm coverage: `optim_method=0/1`, `smooth_method=0/1`.
 - Workflow coverage: forward only, inversion only, and forward+inversion loop.
